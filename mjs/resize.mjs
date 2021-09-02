@@ -4,6 +4,7 @@ const elm = $('<textarea>').appendTo('body'),
 elm.remove();
 export const resize = elm => {
     const f = () => myFunc(elm);
+    f();
     $(window).on('resize', f);
     elm.on('keyup click change', f);
     return elm;
