@@ -17,7 +17,10 @@
         'css'
     ].map(v => `https://${sqhfo4}.github.io/mylib/export/${v}.mjs`));
     const {set, get} = await import(`https://${sqhfo4}.github.io/midi/export/${sqhfo4.slice(0,-1)}.mjs`);
-    const {addTab} = await import('https://hrjs.github.io/a/mjs/addTab.mjs');
+    const __ = await importAll([
+        'addTab',
+        'resize'
+    ].map(v => `https://${sqhfo4}.github.io/mylib/export/${v}.mjs`));
     const g_dqList = {
         '初期座標': 'HERO',
         'BGM': 'BGM',
@@ -33,7 +36,7 @@
     const tabA = $('<div>'),
           tabB = $('<div>').text('output'),
           tabC = $('<div>').text('output');
-    addTab(foot,{
+    __.addTab(foot,{
         list: {
             'Edit': tabA,
             'Output': tabB,
@@ -75,6 +78,7 @@
         label: 'edit',
         textarea: true
     });
+    __.resize(inputEdit);
     inputEdit.elm.on('change', () => {
         g_dqObj[g_editingKey] = inputEdit();
     });
