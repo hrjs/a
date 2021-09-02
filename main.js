@@ -77,7 +77,7 @@
         label: 'edit',
         textarea: true
     });
-    __.resize(inputEdit);
+    __.resize(inputEdit.elm);
     inputEdit.elm.on('change', () => {
         g_dqObj[g_editingKey] = inputEdit();
     });
