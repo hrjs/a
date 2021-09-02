@@ -97,5 +97,4 @@
         backgroundColor:'red',
         fontSize: '2em',
     });
-    body.children().after('<br>');
 })();
