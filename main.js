@@ -58,7 +58,7 @@
                   m = dqFile.match(new RegExp('(?<=#' + key + ')(.|\n)*?(?=#END)', 'g'));
             g_dqObj[key] = m ? m.map(v => '#' + key + v + '#END').join('\n\n') : '';
         };
-        select.set('初期座標');
+        select('初期座標');
         select.elm.trigger('change');
     };
     let g_editingKey = '';
@@ -68,7 +68,7 @@
     });
     select.elm.on('change', () => {
         g_editingKey = select();
-        inputEdit.set(g_dqObj[g_editingKey]);
+        inputEdit(g_dqObj[g_editingKey]);
         inputEdit.elm.trigger('change');
     });
     const inputEdit = _.addInputStr(tabA,{
