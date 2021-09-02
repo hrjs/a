@@ -43,6 +43,7 @@
         }
     });
     _.addInputStr(body,{
+        label: 'bookmarklet',
         value: get(),
         copy: true
     });
