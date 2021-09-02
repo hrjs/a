@@ -49,7 +49,7 @@
     const inputCode = _.addInputStr(body,{
         label: 'load'
     });
-    inputCode.elm.on('change', v => analysis(LZString.decompressFromEncodedURIComponent(v.replace(/^L1/,''))));
+    inputCode.elm.on('change', () => analysis(LZString.decompressFromEncodedURIComponent(inputCode().replace(/^L1/,''))));
     let g_dqObj = {};
     const analysis = dqFile => {
         g_dqObj = {};
@@ -66,17 +66,17 @@
         label: 'edit',
         list: g_dqList
     });
-    select.elm.on('change', key => {
-        g_editingKey = key;
-        inputEdit.set(g_dqObj[key]);
+    select.elm.on('change', () => {
+        g_editingKey = select();
+        inputEdit.set(g_dqObj[g_editingKey]);
         inputEdit.elm.trigger('change');
     });
     const inputEdit = _.addInputStr(tabA,{
         label: 'edit',
         textarea: true
     });
-    inputEdit.elm.on('change', v => {
-        g_dqObj[g_editingKey] = v;
+    inputEdit.elm.on('change', () => {
+        g_dqObj[g_editingKey] = inputEdit();
     });
     addBtn('output',() => {
         const result = set(Object.keys(g_dqObj).map(k=>g_dqObj[k]).join('\n\n'));
