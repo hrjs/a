@@ -13,8 +13,7 @@
           body = $('<div>').appendTo(html),
           foot = $('<div>').appendTo(html);
     const _ = await importAll([
-        'input',
-        'css'
+        'input'
     ].map(v => `https://${sqhfo4}.github.io/mylib/export/${v}.mjs`));
     const {set, get} = await import(`https://${sqhfo4}.github.io/midi/export/${sqhfo4.slice(0,-1)}.mjs`);
     const __ = await importAll([
