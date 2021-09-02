@@ -6,8 +6,8 @@ export const addTab = (holder, p) => {
     for(const k in p.list){
         btns[k] = $('<button>').appendTo(ui).text(k).click(() => {
             activTabName = k;
-            h.find('button').css('backgroundColor','gray');
-            $(this).css('backgroundColor','yellow');
+            ui.find('button').css('backgroundColor','gray');
+            btns[k].css('backgroundColor','yellow');
             area.children().hide();
             p.list[k].show();
             $(window).resize();
