@@ -48,7 +48,7 @@
         copy: true
     });
     const addBtn = (ttl, func) => $('<button>').appendTo(body).text(ttl).on('click', func);
-    addBtn('clear', () => $('#load').val(''));
+    addBtn('clear', () => inputCode(''));
     const inputCode = _.addInputStr(body,{
         label: 'load'
     });
