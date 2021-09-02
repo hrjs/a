@@ -66,7 +66,7 @@
     };
     let g_editingKey = '';
     const select = _.addSelect(tabA,{
-        label: 'edit',
+        label: 'attribute',
         list: g_dqList
     });
     select.elm.on('change', () => {
