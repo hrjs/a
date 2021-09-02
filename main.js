@@ -20,7 +20,7 @@
     const __ = await importAll([
         'addTab',
         'resize'
-    ].map(v => `https://${sqhfo4}.github.io/mylib/export/${v}.mjs`));
+    ].map(v => `https://hrjs.github.io/mylib/export/${v}.mjs`));
     const g_dqList = {
         '初期座標': 'HERO',
         'BGM': 'BGM',
